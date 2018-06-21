@@ -1,28 +1,28 @@
 Package.describe({
-  name: 'netanelgilad:excel',
+  name: 'asoares:excel',
+  version: '0.0.1',
   summary: 'Parse excel worksheets for your meteor app.',
-  version: '0.2.6',
-  git: 'https://github.com/netanelgilad/meteor-excel'
-});
+  git: 'https://github.com/soaresa/meteor-excel',
+  documentation: 'README.md'
+})
 
 Npm.depends({
-  'xlsx' : '0.8.0',
-  'xlsjs' : '0.7.5'
-});
+  xlsx: '0.13.0'
+})
 
-Package.onUse(function(api) {
-  api.versionsFrom('0.9.0.1');
+Package.onUse(function (api) {
+  api.versionsFrom('1.5.2.2')
 
-  api.addFiles('lib/utils.js', 'server');
-  api.addFiles('lib/workbook.js', 'server');
-  api.addFiles('lib/worksheet.js', 'server');
-  api.addFiles('excel.js', 'server');
+  api.addFiles('lib/utils.js', 'server')
+  api.addFiles('lib/workbook.js', 'server')
+  api.addFiles('lib/worksheet.js', 'server')
+  api.addFiles('excel.js', 'server')
 
-  api.export('Excel');
-});
+  api.export('Excel')
+})
 
-Package.onTest(function(api) {
-  api.use('tinytest');
-  api.use('netanelgilad:excel');
-  api.addFiles('excel-tests.js');
-});
+Package.onTest(function (api) {
+  api.use('tinytest')
+  api.use('asoares:excel')
+  api.addFiles('excel-tests.js')
+})
